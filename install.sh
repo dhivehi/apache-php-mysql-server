@@ -52,6 +52,22 @@ sudo mysql_secure_installation
 #To fix pma login issue
 ALTER USER root@'%' IDENTIFIED WITH mysql_native_password BY 'pAssWord';
 
+#To install composer
+yum install php-cli php-zip wget unzip
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+HASH="$(wget -q -O - https://composer.github.io/installer.sig)"
+php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+php -r "unlink('composer-setup.php');"
+
+
+#To set server timezone
+sudo timedatectl set-timezone Asia/Karachi
+
+#To set timezone in mysql, add to this file: /etc/mysql/my.cnf
+default-time-zone = "+05:00"
+
+#To apply timezone
+sudo service mysql restart
 
 
 
