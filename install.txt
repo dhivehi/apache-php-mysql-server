@@ -37,7 +37,7 @@ certbot --apache --webroot -w /var/www/html -d www.domain.com -d domain.com -w /
 #To auto renew certs, add this to crontab
 sudo crontab -e
 #click "i" in keyboard and enter below code
-0 0 */10 * * certbot renew
+0 0 */10 * * certbot renew >> /logs/certbot-cron.log 2>&1
 #click escape and write :wq
 
 # To install php7.3:
