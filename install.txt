@@ -29,6 +29,17 @@ IncludeOptional sites-enabled/*.conf
 sudo ln -s /etc/httpd/sites-available/domain.com.conf /etc/httpd/sites-enabled/domain.com.conf
 sudo systemctl restart httpd
 
+# To install ssl
+#=============================
+yum install certbot
+certbot --apache --webroot -w /var/www/html -d www.domain.com -d domain.com -w /var/www/html/sub -d sub.domain.com -d www.sub.domain.com
+
+#To auto renew certs, add this to crontab
+sudo crontab -e
+#click "i" in keyboard and enter below code
+0 0 */10 * * certbot renew
+#click escape and write :wq
+
 # To install php7.3:
 #=============================
 sudo yum install https://repo.ius.io/ius-release-el7.rpm
