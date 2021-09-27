@@ -1,1 +1,1 @@
-Apache PHP Mysql SSl install instructions for centos 7
+Apache, PHP, Mysql, SSL and Composer install instructions for centos 7
