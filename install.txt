@@ -60,7 +60,7 @@ sudo grep 'temporary password' /var/log/mysqld.log
 #To set new mysql password
 sudo mysql_secure_installation
 
-#To fix pma login issue
+#To fix phpMyAdmin login issue
 ALTER USER root@'%' IDENTIFIED WITH mysql_native_password BY 'pAssWord';
 
 #To install composer
