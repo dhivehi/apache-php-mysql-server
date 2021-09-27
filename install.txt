@@ -17,7 +17,7 @@ IncludeOptional sites-enabled/*.conf
 #Add this to /etc/httpd/sites-available/domain.com.conf
 #<VirtualHost *:80>
 #    ServerName sub.domain.com
-#    ServerAlias sub.domain.com
+#    ServerAlias www.sub.domain.com
 #    DocumentRoot /var/www/html/sub
 #</VirtualHost>
 #<VirtualHost *:80>
